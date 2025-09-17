@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>You're Invited</title>
+  <link rel="stylesheet" href="styles/nomralize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1 class="invite-title animate__animated animate__bounceIn">You're Invited!</h1>
+      <p class="subtitle">Friday, Oct 10 • 7:00 PM • The Garden Hall</p>
+    </header>
+
+    <!-- Inline SVG (animated) -->
+    <section>
+      <h2>Balloons</h2>
+      <svg id="balloons" viewBox="0 0 200 200" width="300" height="300">
+        <g class="group-left">
+          <ellipse cx="45" cy="60" rx="28" ry="36" class="balloon-body" />
+          <path d="M45 96 q0 12 0 24" class="string" />
+        </g>
+        <g class="group-middle">
+          <ellipse cx="100" cy="50" rx="32" ry="42" class="balloon-body middle" />
+          <path d="M100 92 q0 12 0 24" class="string" />
+        </g>
+        <g class="group-right">
+          <ellipse cx="155" cy="65" rx="26" ry="34" class="balloon-body right" />
+          <path d="M155 99 q0 12 0 24" class="string" />
+        </g>
+      </svg>
+    </section>
+
+    <!-- External SVG -->
+    <section>
+      <h2>Guest Badge</h2>
+      <img src="images/medium-royal-crown.png" alt="Crown badge" class="badge"/>
+    </section>
+
+    <section>
+      <button id="rsvpBtn" class="rsvp animate__animated">RSVP</button>
+    </section>
+
+  </main>
+  <script>
+    // small click animation using animate.css
+    const btn = document.getElementById('rsvpBtn');
+    btn.addEventListener('click', () => {
+      btn.classList.remove('animate__heartBeat');
+      void btn.offsetWidth; // reflow to restart animation
+      btn.classList.add('animate__heartBeat');
+      alert('Thanks — RSVP noted (demo).');
+    });
+  </script>
+</body>
+</html>

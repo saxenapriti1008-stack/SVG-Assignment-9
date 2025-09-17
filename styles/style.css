@@ -1,0 +1,33 @@
+:root{
+  --accent1:#ff6b6b;
+  --accent2:#ffd166;
+  --accent3:#4ecdc4;
+  --bg: linear-gradient(135deg,#f8f4ff,#fff7f0);
+  --text:#222;
+}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);}
+.container{max-width:900px;margin:30px auto;padding:24px;background:rgba(255,255,255,0.8);border-radius:12px;}
+.invite-title{font-size:2.2rem;text-align:center;margin:6px 0;}
+.badge{width:160px;display:block;margin:10px 0;}
+
+/* Button transition */
+.rsvp{
+  padding:10px 18px;border-radius:10px;border:2px solid var(--accent3);
+  background:transparent;cursor:pointer;transition:transform 200ms ease, background-color 200ms ease;
+}
+.rsvp:hover{transform:translateY(-6px); background:var(--accent3); color:white;}
+
+/* SVG shapes */
+#balloons .balloon-body{fill:var(--accent1); stroke:#fff;stroke-width:3;}
+#balloons .balloon-body.middle{fill:var(--accent2);}
+#balloons .balloon-body.right{fill:var(--accent3);}
+
+/* keyframes - balloons float */
+@keyframes float {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-22px) }
+  100% { transform: translateY(0) }
+}
+.group-left{animation: float 4s ease-in-out infinite}
+.group-middle{animation: float 4.6s ease-in-out infinite}
+.group-right{animation: float 3.7s ease-in-out infinite}
